@@ -21,7 +21,7 @@ var quotes = [
     
     ]
 
-//var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
 var quoteNumber = quotes.length - 1;
 var randomNumber = Math.floor(Math.random() * quoteNumber) + 1;
 var i = 0;
@@ -29,12 +29,16 @@ var i = 0;
 
 var divInfo = document.getElementById('info');
 var mainQuote = document.createElement('p');
+var quoteInfo = document.createElement('h3');
+
 
 
 divInfo.appendChild(mainQuote);
-mainQuote.innerHTML = quotes[randomNumber].phrase + '<br>';
-mainQuote.innerHTML += '- ' + quotes[randomNumber].person + ', ';
-mainQuote.innerHTML += quotes[randomNumber].movie;
+divInfo.appendChild(quoteInfo);
+
+mainQuote.innerHTML = '" ' + quotes[randomNumber].phrase + ' "' + '<br>';
+quoteInfo.innerHTML = '- ' + quotes[randomNumber].person + ', ';
+quoteInfo.innerHTML += quotes[randomNumber].movie;
 
 //Button click that generates new value from cars array
 var quoteButton = document.getElementById('quoteButton');
@@ -42,9 +46,9 @@ quoteButton.onclick = function () {
     
    // if (i <= carNumber){
     var randomNumber = Math.floor(Math.random() * quoteNumber) + 1;
-    mainQuote.innerHTML = quotes[randomNumber].phrase + '<br>';
-    mainQuote.innerHTML += '- ' + quotes[randomNumber].person + ', ';
-    mainQuote.innerHTML += quotes[randomNumber].movie;
+    mainQuote.innerHTML = '" ' + quotes[randomNumber].phrase + ' "' + '<br>';
+    quoteInfo.innerHTML = '- ' + quotes[randomNumber].person + ', ';
+    quoteInfo.innerHTML += quotes[randomNumber].movie;
     //mainQuote.innerHTML = cars[randomNumber];
     //i++;
 
