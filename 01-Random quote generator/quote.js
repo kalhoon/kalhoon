@@ -1,81 +1,89 @@
 var quotes = [
-    {phrase: 'I\'ll be back',
-     person: 'T-100',
-     movie: 'Terminator, 1984',
+    {quote: 'I\'ll be back',
+     source: 'T-100',
+     citation: 'Terminator',
+     year: '1984',
      backColor: '#7e0424'},
     
-    {phrase: 'Run! Get to the chopper!',
-     person: 'Dutch Schaeffer',
-     movie: 'Predator, 1987',
+    {quote: 'Run! Get to the chopper!',
+     source: 'Dutch Schaeffer',
+     citation: 'Predator',
+     year: '1987',
      backColor: '#306540'},
     
-    {phrase: 'See you at the party Richter!',
-     person: 'Douglas Quaid',
-     movie: 'Total Recall, 1990',
+    {quote: 'See you at the party Richter!',
+     source: 'Douglas Quaid',
+     citation: 'Total Recall',
+     year: '1990',
      backColor: '#834407'},
     
-    {phrase: 'Don\'t disturb my friend, he\'s dead tired',
-     person: 'John Matrix',
-     movie: 'Commando, 1985',
+    {quote: 'Don\'t disturb my friend, he\'s dead tired',
+     source: 'John Matrix',
+     citation: 'Commando',
+     year: '1985',
      backColor: '#390c55'},
     
-    {phrase: 'Hasta la vista, baby',
-     person: 'T-100',
-     movie: 'Terminator 2, 1990',
+    {quote: 'Hasta la vista, baby',
+     source: 'T-100',
+     citation: 'Terminator 2',
+     year: '1990',
      backColor: '#282c54'},
     
-    {phrase: 'What killed the dinosaurs? The ice age!',
-     person: 'Mr Freeze',
-     movie: 'Batman and Robin, 1997',
+    {quote: 'What killed the dinosaurs? The ice age!',
+     source: 'Mr Freeze',
+     citation: 'Batman and Robin',
+     year: '1997',
      backColor: '#172631'},
     
-    {phrase: 'Hey, Killian! Here\'s Subzero! Now... plain zero!',
-     person: 'Ben Richards',
-     movie: 'The Running Man, 1987',
+    {quote: 'Hey, Killian! Here\'s Subzero! Now... plain zero!',
+     source: 'Ben Richards',
+     citation: 'The Running Man',
+     year: ' 1987',
      backColor: 'darkslateblue'}
     
     ]
+//call the Div with 'quote-box' id
+var mainDiv = document.getElementById('quote-box');
 
+//call the button element with 'loadQuote' id
+var quoteButton = document.getElementById('loadQuote');
 
+//define quote array length
 var quoteNumber = quotes.length;
+
+//below code displays random quote upon window load
 var randomNumber = Math.floor(Math.random() * quoteNumber);
-var i = 0;
-
-
-var divInfo = document.getElementById('info');
-var mainQuote = document.createElement('p');
-var quoteInfo = document.createElement('h3');
-
-
-
-divInfo.appendChild(mainQuote);
-divInfo.appendChild(quoteInfo);
-
-//var intervalID = window.setInterval(autoQuotes, 5000);
-
-//Info for page load. Random info will be generated.
-
-
-mainQuote.innerHTML = '" ' + quotes[randomNumber].phrase + ' "' + '<br>';
-quoteInfo.innerHTML = '- ' + quotes[randomNumber].person + ', ';
-quoteInfo.innerHTML += quotes[randomNumber].movie;
+mainDiv.innerHTML = '<p class="quote">" ' + quotes[randomNumber].quote + ' "</p>';
+mainDiv.innerHTML += '<p class="source">' + quotes[randomNumber].source;
+mainDiv.innerHTML += '<span class="citation">' + quotes[randomNumber].citation + ', </span>'; 
+mainDiv.innerHTML += '<span class="year">' + quotes[randomNumber].year + '</span></p>';
 document.body.style.backgroundColor = quotes[randomNumber].backColor;
 
 
-//Button click that generates new value from cars array
-var quoteButton = document.getElementById('quoteButton');
-
-
-
-quoteButton.onclick = function () {
+//function that generates a random quote random number
+var randomQuote = function getRandomQuote() {
     
     var randomNumber = Math.floor(Math.random() * quoteNumber);
-    mainQuote.innerHTML = '" ' + quotes[randomNumber].phrase + ' "' + '<br>';
-    quoteInfo.innerHTML = '- ' + quotes[randomNumber].person + ', ';
-    quoteInfo.innerHTML += quotes[randomNumber].movie;
+    return randomNumber;
+    
+}
+
+//printQuote function that displays quotes after button click
+quoteButton.onclick = function printQuote() {
+    
+    var randomNumber = Math.floor(Math.random() * quoteNumber);
+    
+    mainDiv.innerHTML = '<p class="quote">" ' + quotes[randomNumber].quote + ' "</p>';
+    mainDiv.innerHTML += '<p class="source">' + quotes[randomNumber].source;
+    mainDiv.innerHTML += '<span class="citation">' + quotes[randomNumber].citation + ', </span>'; 
+    mainDiv.innerHTML += '<span class="year">' + quotes[randomNumber].year + '</span></p>';
     document.body.style.backgroundColor = quotes[randomNumber].backColor;
-    console.log(quotes[randomNumber].phrase);
-   
-} // end of onclick function
+    
+} // end of printQuote function
+
+
+
+
+
 
 

@@ -1,3 +1,7 @@
+body {
+    background-color: darkred;
+    
+}
 p {
     text-align: left;
     font-family: monospace;
@@ -6,7 +10,16 @@ p {
     color: navajowhite;
 }
 
-h3 {
+span {
+     text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 100;
+    left: 40%;
+    color: navajowhite;
+}
+
+.source, .citation, .year {
     text-align: center;
     font-family: monospace;
     font-size: 15px;
@@ -39,8 +52,7 @@ button:hover {
     background-color: rgba(255,255,255,.11);
 }
 
-#quoteButton {
-    
+#loadQuote {
     color: navajowhite;
     height: 50px;
     width: 200px;
