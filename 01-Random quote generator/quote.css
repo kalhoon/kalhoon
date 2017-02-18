@@ -1,46 +1,13 @@
 body {
     background-color: darkred;
-    
-}
-p {
-    text-align: left;
-    font-family: monospace;
-    font-size: 30px;
-    font-weight: 900;
-    color: navajowhite;
-}
-
-span {
-     text-align: center;
-    font-family: monospace;
-    font-size: 15px;
-    font-weight: 100;
-    left: 40%;
-    color: navajowhite;
-}
-
-.source, .citation, .year {
-    text-align: center;
-    font-family: monospace;
-    font-size: 15px;
-    font-weight: 100;
-    left: 40%;
-    color: navajowhite;
-}
-
-#info {
-    position: absolute;
-    left: 15%;
-    right: 15%;
-    top: 20%;
     }
 
 button {
-    background-color: transparent;
-   opacity: 1;
-   color: navajowhite;
-    transition: .5s ;
     
+    background-color: transparent;
+    opacity: 1;
+    color: navajowhite;
+    transition: .5s ;
 }
 
 button:focus {
@@ -53,6 +20,7 @@ button:hover {
 }
 
 #loadQuote {
+    margin-left: 40%;
     color: navajowhite;
     height: 50px;
     width: 200px;
@@ -62,13 +30,37 @@ button:hover {
     border: solid 1px navajowhite;
 }
 
-#buttonWrapper {
+.quote {
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 900;
+    color: navajowhite;
+}
+
+#quote-box {
     
-    
-    position: absolute;
-    top: 60%;
-    left: 15%;
-    
-    
+    margin: 70px auto 0;
+    width: 80%;
     
 }
+
+.source, .citation, .year {
+    text-align: right;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 100;
+    width: 100%;
+    color: navajowhite;
+    display: inline-block;
+    
+}
+
+.source {
+    
+    margin-right: 20px;
+}
+
+
+
+

@@ -1,9 +1,11 @@
+//an array of quote objects
 var quotes = [
     {quote: 'I\'ll be back',
      source: 'T-100',
      citation: 'Terminator',
      year: '1984',
-     backColor: '#7e0424'},
+     backColor: '#7e0424',
+     image: 't1000.jpeg'},
     
     {quote: 'Run! Get to the chopper!',
      source: 'Dutch Schaeffer',
@@ -42,42 +44,49 @@ var quotes = [
      backColor: 'darkslateblue'}
     
     ]
+
+//define quote array length
+var quoteNumber = quotes.length;
+
 //call the Div with 'quote-box' id
 var mainDiv = document.getElementById('quote-box');
 
 //call the button element with 'loadQuote' id
 var quoteButton = document.getElementById('loadQuote');
 
-//define quote array length
-var quoteNumber = quotes.length;
-
-//below code displays random quote upon window load
-var randomNumber = Math.floor(Math.random() * quoteNumber);
-mainDiv.innerHTML = '<p class="quote">" ' + quotes[randomNumber].quote + ' "</p>';
-mainDiv.innerHTML += '<p class="source">' + quotes[randomNumber].source;
-mainDiv.innerHTML += '<span class="citation">' + quotes[randomNumber].citation + ', </span>'; 
-mainDiv.innerHTML += '<span class="year">' + quotes[randomNumber].year + '</span></p>';
-document.body.style.backgroundColor = quotes[randomNumber].backColor;
 
 
 //function that generates a random quote random number
-var randomQuote = function getRandomQuote() {
-    
+function getRandomQuote() {
     var randomNumber = Math.floor(Math.random() * quoteNumber);
-    return randomNumber;
+    var randomQuote = quotes[randomNumber];
+    return randomQuote;
     
 }
+
+//display a random quote upon browser load or browser refresh
+var newQuote = getRandomQuote();
+    
+mainDiv.innerHTML = '<p class="quote">" ' + newQuote.quote + ' "</p>';
+mainDiv.innerHTML += '<p class="source">' + newQuote.source;
+mainDiv.innerHTML += '<span class="citation">' + newQuote.citation + '</span>'; 
+mainDiv.innerHTML += '<span class="year">' + newQuote.year + '</span></p>';
+document.body.style.backgroundColor = newQuote.backColor;
+
+
+
 
 //printQuote function that displays quotes after button click
 quoteButton.onclick = function printQuote() {
     
-    var randomNumber = Math.floor(Math.random() * quoteNumber);
+    newQuote = getRandomQuote();
     
-    mainDiv.innerHTML = '<p class="quote">" ' + quotes[randomNumber].quote + ' "</p>';
-    mainDiv.innerHTML += '<p class="source">' + quotes[randomNumber].source;
-    mainDiv.innerHTML += '<span class="citation">' + quotes[randomNumber].citation + ', </span>'; 
-    mainDiv.innerHTML += '<span class="year">' + quotes[randomNumber].year + '</span></p>';
-    document.body.style.backgroundColor = quotes[randomNumber].backColor;
+    mainDiv.innerHTML = '<p class="quote">" ' + newQuote.quote + ' "</p>';
+    mainDiv.innerHTML += '<p class="source"> ' + newQuote.source;
+    mainDiv.innerHTML += '<span class="citation">' +  newQuote.citation + '</span>'; 
+    mainDiv.innerHTML += '<span class="year">' + newQuote.year + '</span></p>';
+    document.body.style.backgroundColor = newQuote.backColor;
+
     
 } // end of printQuote function
 
