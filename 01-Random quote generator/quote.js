@@ -45,9 +45,6 @@ var quotes = [
     
     ]
 
-//define quote array length
-var quoteNumber = quotes.length;
-
 //call the Div with 'quote-box' id
 var mainDiv = document.getElementById('quote-box');
 
@@ -56,13 +53,15 @@ var quoteButton = document.getElementById('loadQuote');
 
 
 
-//function that generates a random quote random number
+//function that generates a random quote
 function getRandomQuote() {
+    var quoteNumber = quotes.length;
     var randomNumber = Math.floor(Math.random() * quoteNumber);
     var randomQuote = quotes[randomNumber];
     return randomQuote;
     
-}
+} // end of getRandomQuote function
+
 
 //display a random quote upon browser load or browser refresh
 var newQuote = getRandomQuote();
