@@ -69,7 +69,7 @@ function getRandomQuote() {
     
 } // end of getRandomQuote function
 
-
+//function that calls getRandomQuote and prints a string with quote elements
 function printQuote() {
     
     var newQuote = getRandomQuote();
