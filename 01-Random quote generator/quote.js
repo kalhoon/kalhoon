@@ -69,9 +69,8 @@ function getRandomQuote() {
     
 } // end of getRandomQuote function
 
-//display a random quote upon browser load or browser refresh
 
-function stringQuote() {
+function printQuote() {
     
     var newQuote = getRandomQuote();
     mainDiv.innerHTML = '<p class="quote">" ' + newQuote.quote + ' "</p>';
@@ -81,18 +80,18 @@ function stringQuote() {
     document.body.style.backgroundColor = newQuote.backColor;
     imageDiv.innerHTML = '<img src="images/' + newQuote.image + '"/>';
     
-} // end of stringQuote function
-
-
-stringQuote();
-
-//printQuote function that displays quotes after button click
-quoteButton.onclick = function printQuote() {
-    
-    stringQuote();
-
-    
 } // end of printQuote function
+
+//display a random quote upon browser load or browser refresh
+printQuote();
+
+//buttonQuote function that calls printQuote function and displays quotes after button click
+quoteButton.onclick = function buttonQuote() {
+    printQuote();
+    
+} // end of buttonQuote function
+
+
 
 
 
